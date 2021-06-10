@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.xworkz.choclate.Choclate" id="choclate">
+	<!-- using parameterzied constructor-->
+	<constructor-arg name="name" value="milk choclate "></constructor-arg>
+	<constructor-arg name="brand" value="dairy milk"></constructor-arg>
+	<constructor-arg name="price" value="100.0"></constructor-arg>
+	
+	
+	<!-- using setters  note default constructor
+	<property name="name" value="kissme"></property>
+	<property name="brand" value="parale"></property>
+	<property name="price" value="0.5"></property>-->
+	</bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
