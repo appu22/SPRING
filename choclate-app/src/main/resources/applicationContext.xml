@@ -5,18 +5,23 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean class="com.xworkz.choclate.Choclate" id="choclate">
-	<!-- using parameterzied constructor-->
-	<constructor-arg name="name" value="milk choclate "></constructor-arg>
-	<constructor-arg name="brand" value="dairy milk"></constructor-arg>
-	<constructor-arg name="price" value="100.0"></constructor-arg>
-	
-	
-	<!-- using setters  note default constructor
-	<property name="name" value="kissme"></property>
-	<property name="brand" value="parale"></property>
-	<property name="price" value="0.5"></property>-->
+		
+		<constructor-arg name="name" value= "${name}"></constructor-arg>
+		<constructor-arg name="brand" value= "${brand}"></constructor-arg>
+		<constructor-arg name="price" value= "${price}"></constructor-arg>
+
+
+		<!-- using setters note default constructor <property name="name" value="kissme"></property> 
+			<property name="brand" value="parale"></property> <property name="price" 
+			value="0.5"></property> -->
 	</bean>
 
+	<bean
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		
+		<property name="location" value="application.properties"></property>
+
+	</bean>
 
 </beans>
 
