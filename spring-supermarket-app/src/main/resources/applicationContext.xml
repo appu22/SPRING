@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.xworkz.supermarket.supermarket.Workers"
+		id="workersID">
+		<constructor-arg name="workersID" value="123" />
+		<constructor-arg name="name" value="appu" />
+		<constructor-arg name="age" value="24" />
+		<constructor-arg name="mobileNO" value="821276545" />
+	</bean>
+
+	<bean class="com.xworkz.supermarket.supermarket.Address"
+		id="addressID">
+		<property name="street" value="${street}">
+		</property>
+		<property name="building" value="${building}">
+		</property>
+		<property name="doorNo" value="${doorNo}">
+		</property>
+		<property name="area" value="${area}">
+		</property>
+		<property name="pincode" value="${pincode}">
+		</property>
+
+	</bean>
+
+	<bean class="com.xworkz.supermarket.supermarket.SuperMarket"
+		id="superMarket">
+		<constructor-arg name="name" value="D-Mart" />
+		<constructor-arg name="noOfCounters" value="10" />
+		<constructor-arg name="gst" value="5" />
+		<constructor-arg name="address" ref="addressID" />
+		<constructor-arg name="workers" ref="workersID" />
+
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="propertyPlaceholderConfigurer">
+		<property name="location" value="application.properties"></property>
+
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+

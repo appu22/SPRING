@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.xworkz.vaccinecenter.vaccine.VaccineCenter"
+		id="vaccineCenter">
+
+		<!-- <constructor-arg name="vaccineCenterName" value="${}" /> <constructor-arg 
+			name="donor" value="${}" /> <constructor-arg name="type" value="${}" /> <constructor-arg 
+			name="address" value="${}" /> -->
+
+		<constructor-arg name="vaccineCenterName" value="Malleshwaram" />
+		<constructor-arg name="donor" value="Dr C N Ashwath Narayan" />
+		<constructor-arg name="type" value="COVIDSHILD" />
+		<constructor-arg name="address" ref="addressID" />
+	</bean>
+
+	<bean class="com.xworkz.vaccinecenter.vaccine.Address" id="addressID">
+	<constructor-arg name="street" value ="Majestic road" />
+		<constructor-arg name="area" value="malleshwaram" />
+		<constructor-arg name="pincode" value="591322" />
+	</bean>
+
+</beans>
