@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:component-scan base-package="com.xworkz.sanitizer"/>
+
+		
+	<!--  <bean class="com.xworkz.sanitizer.Alcohol" id="alcohol">
+		<constructor-arg name="name" value="${}" />
+		<constructor-arg name="price" value="${}" />
+		<constructor-arg name="brand" value="${}" />
+		<constructor-arg name="manufactureDate" value="${}" />
+		<constructor-arg name="expireDate" value="${}" />
+	</bean>-->
+	<!-- 
+	<bean class="com.xworkz.sanitizer.Alcohol" id="alcoholID">
+		<constructor-arg name="name" value="Rum" />
+		<constructor-arg name="price" value="500" />
+		<constructor-arg name="brand" value="Ruma" />
+		<constructor-arg name="manufactureDate" value="23-03-2020" />
+		<constructor-arg name="expireDate" value="23-03-2021" />
+	</bean>
+
+	<bean class="com.xworkz.sanitizer.Sanitizer" id="sanitizer">
+		<constructor-arg name="sanitizerName" value="HandSanitizer pinapile" />
+		<constructor-arg name="sanitizerPrice" value="38.0" />
+		<constructor-arg name="alcoholContent" value="65%" />
+		<constructor-arg name="alcohol" ref="alcoholID" />
+		<constructor-arg name="manufacturesDate"
+			value="18-05-2021" />
+		<constructor-arg name="expireDate" value="15-05-2022" />
+		<constructor-arg name="isAlcoholContent" value="true" />
+	</bean>
+	 -->
+	
+	 <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="propertyPlaceholderConfigurer">
+		<property name="location" value="Application.properties"></property>
+
+	</bean> 
+
+
+</beans>
