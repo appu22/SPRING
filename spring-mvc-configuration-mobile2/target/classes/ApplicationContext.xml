@@ -9,9 +9,9 @@
 
 
 
+<context:component-scan base-package="com.xworkz.mobile2" />
 
-
-	<bean class="com.xworkz.mobile2.dto.MobileDTO"></bean>
+	<!-- <bean class="com.xworkz.mobile2.dto.MobileDTO"></bean> -->
 
 
 </beans>
