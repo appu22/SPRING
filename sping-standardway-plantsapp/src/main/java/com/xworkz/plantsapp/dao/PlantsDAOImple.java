@@ -20,7 +20,6 @@ public class PlantsDAOImple implements PlantsDAO {
 	@Override
 	public boolean savePlantsDTO(PlantsEntity entity) {
 		System.out.println("Invoking  savePlantsDTO");
-//		Transaction transaction = null;
 		Session session = null;
 		try {
 			session = factory.openSession();
@@ -31,7 +30,6 @@ public class PlantsDAOImple implements PlantsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.getTransaction().rollback();
-
 		} finally {
 			if (session != null) {
 				System.out.println("Session Closed...");
@@ -41,7 +39,6 @@ public class PlantsDAOImple implements PlantsDAO {
 			}
 		}
 		return false;
-
 	}
 
 }

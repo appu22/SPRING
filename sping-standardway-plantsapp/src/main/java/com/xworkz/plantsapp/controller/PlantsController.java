@@ -18,15 +18,18 @@ public class PlantsController {
 
 	public PlantsController() {
 		System.out.println("PlantsController Object Created....");
-
 	}
-
-	@RequestMapping(value = "/plants.do",method = RequestMethod.POST)  // handlerMapping
+	 
+	@RequestMapping(value = "/plants.do", method = RequestMethod.POST) // handlerMapping
 	public String plantsDonate(@ModelAttribute PlantsDTO dto, Model model) {
-
+		// @ModelAttribute it will mapping the jsp to dto object
 		System.out.println(dto);
-		service.validataPlantsDTO(dto);
-		model.addAttribute("responcePage", "Thank you for Donating...." + dto);
+		boolean validataPlantsDTO = service.validataPlantsDTO(dto);
+		if (validataPlantsDTO) {
+			model.addAttribute("responcePage", "Thank you for Donating...." + dto);
+		} else {
+			System.out.println("Please Provide Valid Data..");
+		}
 		return "PlantsResponcePage";
 
 	}

@@ -19,37 +19,43 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "plants")
-@Component
 public class PlantsEntity implements java.io.Serializable {
 
-	@Column(name = "P_ID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "P_ID")
 	private int id;
+
+	@NonNull
 	@Column(name = "P_DONAR_NAME")
-	@NonNull
 	private String donarName;
+
+	@NonNull
 	@Column(name = "P_EMAIL")
-	@NonNull
 	private String email;
+
+	@NonNull
 	@Column(name = "P_MOBILE_NO")
-	@NonNull
 	private long mobileNo;
+
+	@NonNull
 	@Column(name = "P_CITY")
-	@NonNull
 	private String city;
+
+	@NonNull
 	@Column(name = "P_STATE")
-	@NonNull
 	private String state;
+
+	@NonNull
 	@Column(name = "P_PINCODE")
-	@NonNull
 	private long pincode;
-	@Column(name = "P_MSG")
+
 	@NonNull
+	@Column(name = "P_MSG")
 	private String msg;
 
-	@Column(name = "NO_OF_PLANTS_DONATE")
 	@NonNull
+	@Column(name = "NO_OF_PLANTS_DONATE")
 	private String noOfplantsDonate;
 
 	public PlantsEntity() {

@@ -14,7 +14,7 @@ public class PlantsServiceImple implements PlantsService {
 	private PlantsDAO dao;
 
 	public PlantsServiceImple() {
-		System.out.println(getClass().getSimpleName() + "Object cteated/......");
+		System.out.println(getClass().getSimpleName() + "Object cteated......");
 	}
 
 	@Override
@@ -30,13 +30,18 @@ public class PlantsServiceImple implements PlantsService {
 		entity.setMsg(dto.getMsg());
 		entity.setNoOfplantsDonate(dto.getNoOfplantsDonate());
 
-//		boolean result = false;
+		boolean result = true;
+
 		if (dto.getDonarName() == null) {
 			System.out.println("Plase Provide Name");
-//			result =true;
-//			return result;
+			result = false;
+			return result;
 		} else if (dto.getPincode() == 0 && dto.getPincode() < 6) {
-			System.out.println("Plase provide pincode ");
+			System.out.println("Pleease provide pincode ");
+		} else if (dto.getMobileNo() == 0 && dto.getMobileNo() < 10) {
+			System.out.println("please provide correct Mobile No ");
+		} else if (dto.getNoOfplantsDonate().equals(null)) {
+			System.out.println(" Please provicde at least one tree. ");
 		} else {
 			dao.savePlantsDTO(entity);
 		}
